@@ -9,3 +9,7 @@ class PredictInput(BaseModel):
 class PredictOutput(BaseModel):
     date: date
     value: float
+
+
+class UpdateDataAndModelOutput(BaseModel):
+    status: str

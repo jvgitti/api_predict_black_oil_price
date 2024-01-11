@@ -2,6 +2,8 @@ import joblib
 import json
 from numpy import busday_count
 
+from server.services.script_update_data_and_model import run_script
+
 
 class PredictService:
     def predict(self, body):
@@ -19,3 +21,7 @@ class PredictService:
     def get_last_trained_data(self):
         model = joblib.load('model.joblib')
         return model.last_dates[0].date()
+
+    def update_data_and_model(self):
+        status = run_script()
+        return status
